@@ -4,6 +4,6 @@ Desarrollo de habilidades para la administración y procesamineto de datos con p
 
 PONLE EL NOMBRE DE TU EQUIPO AQUI PARA QUE YO SEPA CUAL TEMA TE TOCO
 
-EQUIPO:
+EQUIPO: the sea bros
 
-TEMA: 
+TEMA: Reportes de Transito
