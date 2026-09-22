@@ -1,10 +1,19 @@
-# La paz es el camino a la felicidad mas constante
+# PCD - Reportes de transito (seed: ?)
+
+## Confusio alguna vez dijo: Todos tenemos dos vidas y la segunda empieza cuando te das cuenta de que solo tienes una
 
 Desarrollo de habilidades para la administración y procesamineto de datos con python
 
-PONLE EL NOMBRE DE TU EQUIPO AQUI PARA QUE YO SEPA CUAL TEMA TE TOCO
+- Persona A: Fernando Legaria Mendoza
+- Persona B: Hugo Hernandez Carrillo
 
-Nombre de los integrantes del equipo: Fernando Legaria Mendoza, Hugo Hernandez Carrillo
+Reportes de transito - Analisis de reportes de transito para la mejora en la gestion del trafico
+
+## Estructura del repositorio
+
+- `datos/` - Dataset sintetico compartido por todas las practicas
+- `practica1/` a `practica6/` - Codigo y resultados de cada practica
+- `proyecto/` - Proyecto final con datos reales
 
 EQUIPO: the sea bros
 
