@@ -1,0 +1,104 @@
+id|timestamp|vehiculos_afectados|telefono|zona|descripcion_incidente|duracion_incidente_min|email|direccion
+ef818e38ad|2024-05-21 01:03:05|1.0|83-1570-4757|Zona Norte|Congestionamiento por obras de mantenimiento vial|25.0|carloscastro75@yahoo.com|Calle Independencia #1447, Col. Las Aguilas, Queretaro
+63cc580dd0|2024-04-23 20:07:59|3.0|92-4999-5507|Zona Sur|Choque leve entre dos vehiculos, sin heridos reportados|280.0|ana_gonzalez84@live.com|Calle Independencia #173, Col. Moderna, Tijuana
+94f7ce4f60|20230513|1.0|68-8428-6642|Autopista||42.0|jose_martinez5@gmail.com|Calle Juarez #1425, Col. Roma Norte, Tijuana
+441bb7bb4d|2024-01-07 01:42:37|1.0|35-1549-0208|Periferico|Accidente con danos materiales, transito lento en la zona|14.0|valentinamorales54@gmail.com|
+d743f8dca1|05-05-2023|1.0|51-3478-9390|Zona Norte|Choque leve entre dos vehiculos, sin heridos reportados|300.0|anajimenez45@|Calle Hidalgo #421, Col. Chapultepec, Puebla
+dabd335c65|2024-07-14 12:40:50|2.0|37 9734 8858|Zona Residencial|Vehiculo descompuesto obstruyendo carril de baja velocidad|23.0|josegonzalez7@gmail.com|Calle Reforma #1145, Col. Chapultepec, Tijuana
+ef818e38ad|2024-05-21 01:03:05|1.0|83-1570-4757|Zona Norte|Congestionamiento por obras de mantenimiento vial|25.0|carloscastro75@yahoo.com|Calle Independencia #1447, Col. Las Aguilas, Queretaro
+c9114a0532|2023-01-18 15:23:55|3.0|79-0703-0520|Autopista|Congestionamiento por obras de mantenimiento vial|50.0|maria_gonzalez58@yahoo.com|Calle Revolucion #1450, Col. Moderna, Puebla
+75804b93d4|2023-02-19 13:13:29|2.0|49-3352-9248|Zona Industrial|Accidente con danos materiales, transito lento en la zona||luisflores25@|Calle Constitucion #1262, Col. Roma Norte, Tijuana
+7f287cab9b|2024-03-21 20:31:46|2.0|64-0736-2567||Congestionamiento por obras de mantenimiento vial|43.0|andrea.torres63@hotmail.com|Calle Constitucion #337, Col. Moderna, Monterrey
+8516a4100b|2023-06-09 14:56:27|||Centro|Accidente con danos materiales, transito lento en la zona|39.0|sofia_perez94@live.com|Calle Allende #1953, Col. Roma Norte, CDMX
+4ee50f05ae|2024-04-06 02:32:49|1.0|25-3265-1334|Autopista|Vehiculo descompuesto obstruyendo carril de baja velocidad|22.0|javier_lopez98@hotmail.com|Calle Hidalgo #1836, Col. Del Valle, Monterrey
+a67a853a40|2023-12-27 04:41:05|1.0|25-1865-5171|Zona Norte|Congestionamiento por obras de mantenimiento vial|25.0|sofia.martinez91@hotmail.com|Calle Insurgentes #1843, Col. Las Aguilas, Queretaro
+41f569aecb|2024-07-25 00:13:40|3.0|98-1466-4133|Zona Sur|Accidente con danos materiales, transito lento en la zona|34.0|ana_reyes38@live.com|Calle Allende #401, Col. Las Aguilas, Leon
+462d79ca82|2023-10-19 12:27:59|4.0|50-2154-2465|Autopista|Choque leve entre dos vehiculos, sin heridos reportados|45.0|javier.sanchez95@gmail.com|Calle Independencia #993, Col. Chapultepec, Monterrey
+bd04f066c0|2024-07-20 08:02:52|1.0|75-1380-3716|Zona Norte|Vehiculo descompuesto obstruyendo carril de baja velocidad|28.0|juan_hernandez41@live.com|Calle Independencia #349, Col. Roma Norte, Monterrey
+8cf432786d|2023-06-11 22:26:57|20.0|86-2669-4062|Zona Industrial|Accidente con danos materiales, transito lento en la zona|13.0|valentina_ramirez59@live.com|Calle Constitucion #1073, Col. Vista Hermosa, Monterrey
+da31750a26|2023-12-05 15:17:32|4.0|80-9215-4972|Zona Sur|Vehiculo descompuesto obstruyendo carril de baja velocidad|51.0|laura_rodriguez10@gmail.com|Calle Juarez #434, Col. La Paz, Queretaro
+0fcae1c5c7|2024-03-16 00:01:47|1.0|1869446991|ZONA RESIDENCIAL|Semaforo fuera de servicio genera lentitud en el cruce|32.0|miguelmartinez52@hotmail.com|Calle Madero #1970, Col. Del Valle, Monterrey
+94f7ce4f60|20230513|1.0|68-8428-6642|Autopista||42.0|jose_martinez5@gmail.com|Calle Juarez #1425, Col. Roma Norte, Tijuana
+ce5db3349e|12-11-23 12:21:20|2.0|52-8262-3016|Periferico|Semaforo fuera de servicio genera lentitud en el cruce|16.0|valentinamorales24@hotmail.com|Calle Morelos #1698, Col. Roma Norte, Guadalajara
+9e5d4964ed|2024-07-25 17:48:44|2.0|2392589249|Autopista|Accidente con danos materiales, transito lento en la zona|42.0|juan_gonzalez43@hotmail.com|Calle Reforma #551, Col. Centro, Monterrey
+01e96e4388|2023-03-27 19:52:23|4.0|96-7397-6827|Centro|Accidente con danos materiales, transito lento en la zona|67.0|ana_perez47@gmail.com|Calle Constitucion #1370, Col. Vista Hermosa, Queretaro
+c5184d6185|2024-09-01 05:38:55|10.0|76-6848-8781|Zona Residencial|Vehiculo descompuesto obstruyendo carril de baja velocidad|16.0|paula.gonzalez77@live.com|
+a048a4dc86|2024-03-06 11:36:36|4.0|68-0386-8751|Periferico||46.0|javier_ramirez74@gmail.com|Calle Madero #938, Col. Del Valle, Queretaro
+6fade43b30|06-25-2024|1.0|28-8806-1240||Vehiculo descompuesto obstruyendo carril de baja velocidad|34.0|maria_perez35@live.com|Calle Revolucion #1187, Col. Jardines, Tijuana
+fdfa0a2381|2024-02-16 15:07:59|2.0|08-3252-6240|Zona Residencial|Accidente con danos materiales, transito lento en la zona|36.0|miguelflores4@outlook.com|Calle Revolucion #847, Col. Jardines, Queretaro
+4ea4d70e15|2024-08-22 14:13:44|2.0|01-1986-2217|Periferico|Accidente con danos materiales, transito lento en la zona|35.0|diego_jimenez7@live.com|Calle Madero #1703, Col. Jardines, CDMX
+43a3acb475|20240308|2.0|34-3612-2530|Zona Industrial|Congestionamiento por obras de mantenimiento vial|21.0|luis.torres15@yahoo.com|Calle Revolucion #894, Col. Centro, CDMX
+69f145dd3a|2024-05-05 19:22:26|4.0|21-7626-3763|Autopista|Accidente con danos materiales, transito lento en la zona|46.0|jose.flores47@outlook.com|Calle Constitucion #1819, Col. La Paz, Monterrey
+0fae14199e|2024-08-13 11:58:20|3.0|90-0661-2467|Zona Industrial|Semaforo fuera de servicio genera lentitud en el cruce|39.0|ana.lopez36@outlook.com|Calle Reforma #46, Col. San Pedro, Leon
+25cbc4d904|2023-09-17 12:59:25||77-4451-4765|Zona Industrial|Choque leve entre dos vehiculos, sin heridos reportados|29.0||Calle Allende #600, Col. Centro, Puebla
+6ea609a544|2023-11-15 10:21:59|1.0|05-9058-9|Zona Residencial|Congestionamiento por obras de mantenimiento vial|44.0|ana_ramirez68@hotmail.com|Calle Juarez #1452, Col. Las Aguilas, Puebla
+480da948a3|2024-11-23 07:40:34|2.0|66-1968-9389|Autopista|Accidente con danos materiales, transito lento en la zona|30.0|mariajimenez59@live.com|Calle Insurgentes #1326, Col. Jardines, Puebla
+792251e5f6|20230703|2.0|77-6125-9009|Zona Norte||44.0|carlos_flores41@live.com|Calle Revolucion #321, Col. San Pedro, Merida
+17d2772438|2024-07-04 14:32:32|1.0|58-5864-3468|Autopista|Choque leve entre dos vehiculos, sin heridos reportados|21.0|ana_reyes22@outlook.com|Calle Juarez #497, Col. Las Aguilas, Queretaro
+b2e5b2ca4e|2023-08-23 19:07:24|1.0|09-4734-9985|Zona Sur|Choque leve entre dos vehiculos, sin heridos reportados|46.0|mariamartinez60@|Calle Hidalgo #436, Col. Jardines, Guadalajara
+f47decdb6d|2024-05-29 19:03:12||88-5531-7925|Zona Residencial|Congestionamiento por obras de mantenimiento vial|51.0|laura_rodriguez19@yahoo.com|Calle Allende #779, Col. Roma Norte, Leon
+bbe55b6d57|2024-03-01 19:44:25|3.0|10-3093-9066|Zona Norte|Congestionamiento por obras de mantenimiento vial|48.0|valentina_jimenez22gmail.com|Calle Madero #1950, Col. Las Aguilas, Guadalajara
+ed5388681a|2024-08-06 20:46:42|1.0|98-6046-6573|Centro|Semaforo fuera de servicio genera lentitud en el cruce|41.0|sofiaramirez64@hotmail.com|Calle Morelos #1546, Col. La Paz, Merida
+31aed36c38|2024-06-15 21:01:27|1.0|95-1784-8947|Autopista|Congestionamiento por obras de mantenimiento vial|31.0|juan.jimenez93@hotmail.com|Calle Revolucion #441, Col. Vista Hermosa, Leon
+535f7f6d63|2023-01-31 21:51:36|3.0|09-5386-7112|Autopista|Choque leve entre dos vehiculos, sin heridos reportados|39.0|andrearodriguez89@gmail.com|Calle Revolucion #895, Col. Del Valle, Leon
+183727215e|2023-01-20 17:05:14|32.0|40-0066-9786|Zona Industrial|||sofia_hernandez25@hotmail.com|Calle Juarez #1954, Col. Vista Hermosa, CDMX
+10a3c31d05|2023-03-16 16:39:22|2.0|92-1131-9089|Zona Sur|Accidente con danos materiales, transito lento en la zona|296.0||Calle Hidalgo #985, Col. Vista Hermosa, Tijuana
+4bfbc237ab|2023-12-25 23:54:33|4.0|06-9422-4100|Zona Sur|Congestionamiento por obras de mantenimiento vial|48.0||Calle Allende #1587, Col. Vista Hermosa, Merida
+07e037efbb|26/08/2023 03:44|1.0|26-5066-8039|Zona Residencial|Accidente con danos materiales, transito lento en la zona|17.0|valentina.sanchez9@outlook.com|Calle Independencia #113, Col. La Paz, Guadalajara
+0f6569de04||4.0|28-1536-3401|Zona Industrial|Congestionamiento por obras de mantenimiento vial|560.0|juan.perez75@gmail.com|Calle Revolucion #1919, Col. Centro, Merida
+be78ea9f87|2024-08-31 09:01:55|1.0|09-3789-9769|Zona Norte|Semaforo fuera de servicio genera lentitud en el cruce|28.0|diego.reyes53@hotmail.com|Calle Morelos #1047, Col. Chapultepec, CDMX
+935d0a03b1|2023-08-16 02:57:53|2.0|63-5885-7780|Centro|Accidente con danos materiales, transito lento en la zona|37.0|juan.hernandez58@hotmail.com|Calle Reforma #1778, Col. La Paz, Leon
+c5b247d55c|2023-06-18 04:49:27|1.0|12-7604-4999|Zona Norte|Vehiculo descompuesto obstruyendo carril de baja velocidad|14.0|diegoperez54@gmail.com|Calle Allende #1944, Col. Vista Hermosa, Tijuana
+5206eceb81|2024-07-28 16:21:06|10.0|+52 54-0012-2708|Centro|Choque leve entre dos vehiculos, sin heridos reportados|280.0|luisperez92@live.com|Calle Reforma #905, Col. Centro, Merida
+094b6db87f||1.0|16-7899-0019|Zona Sur|Choque leve entre dos vehiculos, sin heridos reportados|30.0|luis.perez43@outlook.com|Calle Reforma #836, Col. Del Valle, Monterrey
+cad089365f|2024-06-20 02:01:49|-2.0|15-7814-1268|Zona Residencial|Choque leve entre dos vehiculos, sin heridos reportados|32.0|diego.ramirez35@live.com|Calle Constitucion #142, Col. Las Aguilas, Queretaro
+fa7a8c92e2|2024-12-16 10:30:44|2.0|87-4429-0556|Autopista|Accidente con danos materiales, transito lento en la zona|24.0|juan_torres53@hotmail.com|Calle Morelos #1069, Col. Roma Norte, Monterrey
+954caeed64|2024-01-28 18:01:13|1.0||Autopista|Congestionamiento por obras de mantenimiento vial|32.0|laura_martinez1@yahoo.com|Calle Hidalgo #89, Col. Del Valle, Puebla
+c391765b2d|2023-07-18 11:10:57|2.0|06-2784-6311|Centro|Congestionamiento por obras de mantenimiento vial|30.0|luis_torres76@outlook.com|Calle Hidalgo #610, Col. San Pedro, CDMX
+df2b308ccb|2023-09-06 12:55:26|4.0|37-4553-4349|Zona Residencial|Semaforo fuera de servicio genera lentitud en el cruce|37.0|luisflores92@hotmail.com|Calle Madero #979, Col. La Paz, Leon
+8225af3789|2023-02-15 07:24:37|-3.0|27-6376-4448|Periferico|Choque leve entre dos vehiculos, sin heridos reportados|46.0|anagonzalez53@yahoo.com|Calle Constitucion #495, Col. Moderna, CDMX
+320624c107|2024-09-06 02:29:38|2.0|(72) 1541-7227|Centro|Vehiculo descompuesto obstruyendo carril de baja velocidad|240.0|renata.flores46@gmail.com|Calle Independencia #1902, Col. San Pedro, Tijuana
+a9070ae4dd|2024-07-25 12:07:03||00-5140-8000|Periferico|Choque leve entre dos vehiculos, sin heridos reportados||juan.lopez19@hotmail.com|Calle Juarez #1253, Col. Chapultepec, Tijuana
+357b01378d|2024-05-19 10:05:14|2.0|38-4686-3762|Zona Sur|Semaforo fuera de servicio genera lentitud en el cruce|39.0|javiercastro69@outlook.com|Calle Constitucion #1651, Col. Las Aguilas, Merida
+574523309c|2023-09-27 19:02:04|4.0|49-6512-2633|Zona Industrial|Semaforo fuera de servicio genera lentitud en el cruce|53.0|maria.flores45@yahoo.com|Calle Allende #609, Col. Chapultepec, Monterrey
+075cd19692|2023-02-11 22:36:46|2.0|31-5125-2966|Periferico|Accidente con danos materiales, transito lento en la zona|396.0|javiergonzalez54@outlook.com|Calle Allende #480, Col. Centro, Monterrey
+be6eaf8567|2024-09-02 16:27:59|1.0|85-0897-9491|Zona Industrial|Congestionamiento por obras de mantenimiento vial|||Calle Constitucion #1568, Col. Las Aguilas, Puebla
+32221251b3|2023-12-27 01:28:32|4.0|70-1430-5191|Autopista|Choque leve entre dos vehiculos, sin heridos reportados|43.0|jose_gonzalez21@yahoo.com|Calle Constitucion #1071, Col. Vista Hermosa, CDMX
+075603dff1|2023-03-01 05:13:29|1.0|38-9976-2013|Centro|Accidente con danos materiales, transito lento en la zona|28.0|ana.jimenez26@live.com|Calle Hidalgo #1041, Col. Las Aguilas, Monterrey
+c7ca69a85f|2023-08-18 07:40:07|2.0|52-3375-4201|zona residencial|Vehiculo descompuesto obstruyendo carril de baja velocidad|44.0|lauralopez79@|Calle Morelos #589, Col. La Paz, Monterrey
+a1950d0c92|2024-06-14 16:23:23|1.0|31-8377-2328|ZONA INDUSTRIAL|Accidente con danos materiales, transito lento en la zona|312.0|carlosgarcia91@outlook.com|Calle Insurgentes #208, Col. Roma Norte, Monterrey
+a8ad667108|2023-09-05 08:45:36|1.0|24 6422 3038|Zona Residencial|Accidente con danos materiales, transito lento en la zona|47.0|valentina.reyes75@hotmail.com|Calle Reforma #201, Col. Roma Norte, Leon
+75d69e7208|2024-09-28 20:19:20|3.0||Centro|Congestionamiento por obras de mantenimiento vial|36.0|mariareyes94@gmail.com|Calle Allende #1504, Col. Centro, Guadalajara
+1f6051c473|2023-01-05 22:25:31|1.0|17-9161-1747|Zona Sur|Choque leve entre dos vehiculos, sin heridos reportados|38.0|sofia.castro65@hotmail.com|Calle Revolucion #343, Col. Roma Norte, Merida
+1830fa6768|2024-09-20 06:49:07|1.0|13-4854-7696|Centro|Choque leve entre dos vehiculos, sin heridos reportados|490.0|juan.torres41@gmail.com|Calle Constitucion #1195, Col. Chapultepec, Queretaro
+beeb61cbb8|2024-07-17 01:45:44|1.0|61-6283-1688|Zona Norte|Vehiculo descompuesto obstruyendo carril de baja velocidad|26.0|maria_reyes4@hotmail.com|Calle Insurgentes #917, Col. Chapultepec, Guadalajara
+e9e2c3e20f|2023-09-11 00:12:24|4.0|18 3506 3213|Autopista|Semaforo fuera de servicio genera lentitud en el cruce|50.0|jose_lopez44@live.com|Calle Independencia #1962, Col. La Paz, Queretaro
+25a5a5dca4|2023-09-06 06:34:49|3.0|17-5817-8737|Zona Residencial|Vehiculo descompuesto obstruyendo carril de baja velocidad|35.0|laura_gonzalez44@@outlook.com|
+54d121bd15|2024-02-22 16:40:09|1.0|49-1110-5477||Accidente con danos materiales, transito lento en la zona|56.0|miguel.gonzalez67@yahoo.com|Calle Reforma #729, Col. Centro, Guadalajara
+2f39a979f8|2023-08-13 13:01:15|2.0|58-6153-1245|zona sur|Choque leve entre dos vehiculos, sin heridos reportados|43.0|renata_reyes73@outlook.com|Calle Morelos #1524, Col. Centro, Merida
+6c3097a317|2024-01-18 09:39:04|2.0|77-2883-6160|Zona Norte|Semaforo fuera de servicio genera lentitud en el cruce|50.0|andrearodriguez@gmail.com|Calle Morelos #34, Col. Las Aguilas, Puebla
+5c94ed7b89|2023-03-01 08:51:24|3.0|07-7291-8291|Zona Sur|Accidente con danos materiales, transito lento en la zona|39.0|ana.morales45@hotmail.com|Calle Revolucion #1100, Col. Centro, Puebla
+610141885a|11-28-2024|2.0|58 1759 3013|Centro|Semaforo fuera de servicio genera lentitud en el cruce|35.0|luis_ramirez38@outlook.com|Calle Morelos #1035, Col. Jardines, Monterrey
+358b67cfdc|2024-12-05 09:29:20|3.0|19-5118-5117|Zona Industrial|Choque leve entre dos vehiculos, sin heridos reportados|48.0|laura_morales28@yahoo.com|Calle Allende #1622, Col. Las Aguilas, CDMX
+57fdab175e|20230628|20.0|26-4165-6969|Zona Industrial|Semaforo fuera de servicio genera lentitud en el cruce|38.0|juansanchez51@hotmail.com|Calle Independencia #1497, Col. Vista Hermosa, Puebla
+3f7a79f03e|2024-03-05 22:49:56|3.0|43-1790-7258|Centro|Accidente con danos materiales, transito lento en la zona|30.0|maria.flores91@live.com|Calle Revolucion #989, Col. Moderna, Monterrey
+e2fdff0392||4.0|43-6362-0192|Autopista|Vehiculo descompuesto obstruyendo carril de baja velocidad|41.0|paulahernandez96@gmail.com|Calle Revolucion #910, Col. Las Aguilas, Monterrey
+9331772357|2024-12-10 23:24:54|1.0|95-9290-6079|Zona Sur|Accidente con danos materiales, transito lento en la zona|19.0|andrea_jimenez92@hotmail.com|Calle Morelos #783, Col. Centro, Merida
+74c149ce7b|2024-03-10 12:54:50|2.0|8883043093|Zona Residencial|Accidente con danos materiales, transito lento en la zona|21.0|carlos.castro72@yahoo.com|Calle Insurgentes #319, Col. Moderna, Puebla
+6a1c46333f|2023-01-12 02:20:15|1.0|80-8710-2152|Periferico|Choque leve entre dos vehiculos, sin heridos reportados|34.0|andrea_martinez93@outlook.com|Calle Reforma #718, Col. San Pedro, Leon
+12c5b0cbf9|2024-01-08 17:06:46|4.0|61-2967-9758|Zona Industrial|Choque leve entre dos vehiculos, sin heridos reportados|34.0|laura.lopez54@hotmail.com|Calle Revolucion #1542, Col. Jardines, Monterrey
+441bb7bb4d|2024-01-07 01:42:37|1.0|35-1549-0208|Periferico|Accidente con danos materiales, transito lento en la zona|14.0|valentinamorales54@gmail.com|
+5004c2276c|2023-02-04 19:42:32|3.0||Autopista|Accidente con danos materiales, transito lento en la zona|34.0|josegarcia84@live.com|Calle Madero #150, Col. La Paz, CDMX
+a54b0f4c38|2024-05-27 12:09:03|3.0|39-4112-1471|Autopista|Choque leve entre dos vehiculos, sin heridos reportados|18.0|maria.perez74@live.com|Calle Juarez #1961, Col. San Pedro, Merida
+9c1b91fa08|2024-01-07 02:41:12|3.0|11-5238-8189|Autopista|Choque leve entre dos vehiculos, sin heridos reportados|34.0|sofiarodriguez50outlook.com|Calle Reforma #1400, Col. San Pedro, Guadalajara
+1914931870|2024-05-21 21:18:47|1.0|37-1114-3570|Centro|Accidente con danos materiales, transito lento en la zona|45.0|juan_castro33@live.com|Calle Hidalgo #743, Col. Vista Hermosa, CDMX
+8a27fa99d7|2024-03-06 09:32:59|1.0|82-6066-0778|Periferico|Congestionamiento por obras de mantenimiento vial|38.0|laura.sanchez70@live.com|Calle Allende #1570, Col. Vista Hermosa, Leon
+e107b79497|2024-12-15 23:50:37|3.0|70-6356-7584|Autopista|Vehiculo descompuesto obstruyendo carril de baja velocidad|41.0|maria_morales89@yahoo.com|Calle Hidalgo #1271, Col. Chapultepec, CDMX
+8f156eb41c|2024-12-17 22:16:10|2.0|22-0890-5093|Zona Norte|Semaforo fuera de servicio genera lentitud en el cruce|44.0|maria.ramirez62@yahoo.com|Calle Morelos #1099, Col. San Pedro, Tijuana
+1ed5129b37|2023-05-10 07:21:49|1.0|29-3561-3148|Periferico|Choque leve entre dos vehiculos, sin heridos reportados|25.0|sofia_martinez19@live.com|Calle Juarez #1335, Col. La Paz, Leon
+f635c9595a|2023-09-02 07:24:05|1.0|43-8189-2782|Periferico|Accidente con danos materiales, transito lento en la zona|39.0|miguel.garcia15@live.com|Calle Reforma #1230, Col. Las Aguilas, Queretaro
+d702cb10bc|2023-03-01 17:20:32|3.0|87-8549-2692|Zona Sur|Accidente con danos materiales, transito lento en la zona|60.0|sofia.lopez2@yahoo|Calle Morelos #1897, Col. Moderna, Tijuana
+88f251c7b7|2023-10-26 23:36:54|1.0|63-3380-9794|Zona Residencial|Accidente con danos materiales, transito lento en la zona|40.0|sofia_jimenez24@live.com|Calle Independencia #945, Col. Jardines, Queretaro
+535ad9fa81|2023-09-28 17:05:30|1.0|73-6540-7262|Zona Norte|Semaforo fuera de servicio genera lentitud en el cruce|45.0|anasanchez86@gmail.com|Calle Morelos #319, Col. Roma Norte, CDMX
+2c3b7e4374|20231102|30.0|45-3807-5537||Semaforo fuera de servicio genera lentitud en el cruce|41.0|miguel_hernandez20@gmail.com|
+2c34086923||3.0|91-0487-9925|PERIFERICO|Vehiculo descompuesto obstruyendo carril de baja velocidad|50.0|miguelflores21@yahoo.com|Calle Allende #1114, Col. San Pedro, Queretaro
