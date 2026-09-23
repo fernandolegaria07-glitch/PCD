@@ -41,3 +41,5 @@ Buen avance: agregaron `requirements.txt`, reemplazaron `codigos/` por `datos/`,
 **Estatus:** 4/6 de la estructura esperada.
 
 Sigue igual: `practica1` a `practica6` y `proyecto/` siguen vacías, les falta llenarlas con sus subcarpetas `src/` y `resultados/` (`proyecto/` también necesita `datos/`). También notamos una carpeta extra `mi_primer_proyecto/` en la raíz que no forma parte de la estructura esperada.
+
+📖 **Práctica 1 ya está disponible.** La encontrarán en `labs/P1/P1_setup_reconocimiento.md`, dentro del repositorio del profesor: https://github.com/ESCOMLCD/pcd202701/blob/main/labs/P1/P1_setup_reconocimiento.md — léanla completa antes de empezar a programar, ahí está todo lo que deben hacer, el formato exacto de `resumen.txt` y la fecha de entrega (mar 6-oct).
