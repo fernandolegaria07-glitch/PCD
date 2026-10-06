@@ -1,0 +1,39 @@
+=== RESUMEN DEL DATASET ===
+Archivo: reportes_transito-ruido_100000.csv
+Pareja: Hugo Hernandez Carrillo - Fernando Legaria Mendoza
+Seed: ?
+
+--- Dimensiones ---
+Filas: 103000
+Columnas: 9
+Nombres de columnas: timestamp, zona, descripcion_incidente, id, telefono, duracion_incidente_min, direccion, vehiculos_afectados, email
+
+--- Primeras 5 filas ---
+timestamp|zona|descripcion_incidente|id|telefono|duracion_incidente_min|direccion|vehiculos_afectados|email
+2023-06-27 09:26:35|Zona Residencial|Choque leve entre dos vehiculos, sin heridos reportados|358eceea3a||37.0|Calle Morelos #1148, Col. La Paz, Puebla|3.0|carlostorres90@gmail.com
+2024-08-25 09:07:37|Periferico|Choque leve entre dos vehiculos, sin heridos reportados|2a6e7df2f4|52-6541-8446|35.0|Calle Madero #869, Col. Centro, CDMX|2.0|jose_lopez53@live.com
+2024-12-14 18:23:17|PERIFERICO|Semaforo fuera de servicio genera lentitud en el cruce|8cc524ae2e|(62) 5403-8047|43.0|Calle Morelos #1479, Col. San Pedro, Merida|3.0|renata.perez8@outlook.com
+2024-09-28 12:18:45|Zona Norte|Congestionamiento por obras de mantenimiento vial|2fd8af58a5|89-5301-9074|17.0|Calle Hidalgo #1009, Col. Moderna, Monterrey|1.0|carlos.lopez93@yahoo.com
+2024-11-19 14:36:28|AUTOPISTA|Vehiculo descompuesto obstruyendo carril de baja velocidad|1885f212a9|38-1423-7531|17.0|Calle Juarez #1630, Col. Centro, Leon|2.0|andrea_hernandez51@yahoo.com
+
+--- Columna categorica: telefono ---
+Valores unicos: 96000
+Valor mas frecuente: 74-7245-2554 (2 apariciones)
+
+--- Columna numerica: descripcion_incidente ---
+Valores validos (no vacios): 0
+Minimo: N/A (Es puro texto)
+Maximo: N/A (Es puro texto)
+
+--- Calidad de datos ---
+Celdas vacias totales: 32952
+Celdas vacias por columna:
+  timestamp: 4100
+  zona: 4126
+  descripcion_incidente: 4118
+  id: 0
+  telefono: 4139
+  duracion_incidente_min: 4123
+  direccion: 4108
+  vehiculos_afectados: 4124
+  email: 4114
