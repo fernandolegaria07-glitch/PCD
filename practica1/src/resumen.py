@@ -83,3 +83,11 @@ for fila in primeras_5_filas:
 print(f"\n--- Columna categórica: {columna_categorica} ---")
 print(f"Valores únicos: {valores_unicos}")
 print(f"Valor más frecuente: {valor_mas_frec[0]} ({valor_mas_frec[1]} apariciones)")
+
+print(f"\n Columna numérica: {columna_numerica}")
+print(f"Valor mínimo: {min}")
+print(f"Valor máximo: {max}")
+
+print(f"\n  -- Calidad de Datos --")
+print(f" Cantidad de valores válidos: {conteo_validos}")
+print(f" Cantidad de valores inválidos: {n_filas - conteo_validos}") 
