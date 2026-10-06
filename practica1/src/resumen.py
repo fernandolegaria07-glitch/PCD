@@ -11,10 +11,19 @@ pos_cat = 4
 conteo_valores = []
 frecuencias_valores = {}
 
+# Datos para la muestra de columna numerica (de la rama de tu amigo)
+pos_num = 2
+conteo_validos = 0
+min = 10000000
+max = 0
+
 with open(ruta_csv, "r", encoding="utf-8") as archivo:
     
     linea_cabecera = archivo.readline().strip()
     columnas = linea_cabecera.split("|")
+    
+    # Extraemos el nombre de la columna hasta que el archivo ya se leyó
+    columna_numerica = columnas[pos_num]
     
     for linea in archivo:
         linea_limpia = linea.strip()
@@ -25,13 +34,23 @@ with open(ruta_csv, "r", encoding="utf-8") as archivo:
         data.append(linea_limpia)
         n_filas += 1
 
+        # Lógica combinada (tuya y de tu amigo)
         cat = linea_limpia[pos_cat].lower().title()
-        if cat == '': continue
-        
-        if cat in frecuencias_valores:
-            frecuencias_valores[cat] += 1
-        else:
-            frecuencias_valores[cat] = 1
+        if cat != '':
+            if cat in frecuencias_valores:
+                frecuencias_valores[cat] += 1
+            else:
+                frecuencias_valores[cat] = 1
+
+        num = linea_limpia[pos_num]
+        if num != '':
+            num = float(num)
+            if num > 0:
+                conteo_validos += 1
+                if num > max:
+                    max = num
+                if num < min: 
+                    min = num
 
 # Transformacion de datos previos a datos mostrables
 columna_categorica = columnas[pos_cat]
@@ -43,7 +62,6 @@ valor_mas_frec = frecuencias_lista[0]
 for tup in frecuencias_lista:
     if valor_mas_frec[1] < tup[1]:
         valor_mas_frec = tup
-
 
 print("=== RESUMEN DEL DATASET ===")
 print(f"Archivo: {tema}-ruido.csv")
@@ -61,6 +79,7 @@ print(linea_cabecera)
 for fila in primeras_5_filas:
    print(fila)
    
-print(f"\n Columna categórica: {columna_categorica}")
-print(f" Valores únicos: {valores_unicos}")
-print(f" Valor más frecuente: {valor_mas_frec[0]} con {valor_mas_frec[1]} ocurrencias")
+# Tu código de formato
+print(f"\n--- Columna categórica: {columna_categorica} ---")
+print(f"Valores únicos: {valores_unicos}")
+print(f"Valor más frecuente: {valor_mas_frec[0]} ({valor_mas_frec[1]} apariciones)")
