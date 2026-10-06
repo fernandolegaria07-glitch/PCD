@@ -1,8 +1,12 @@
-file = open('../../datos/reportes_transito-ruido_100.csv', 'r')
-data = []
-line = file.readline()
-while line:
-    data.append(line.strip().split('|'))
+with open('../../datos/reportes_transito-ruido_100.csv', 'r') as file: 
+    data = []
     line = file.readline()
-print(data[1])
-file.close()
+    filas = -1
+    columnas = len(line.strip().split('|'))
+
+    while line:
+        data.append(line.strip().split('|'))
+        line = file.readline()
+        filas += 1
+    print(data[1])
+    file.close()
