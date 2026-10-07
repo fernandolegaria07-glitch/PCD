@@ -1,4 +1,6 @@
-# PCD - Reportes de transito (seed: ?)
+# PCD - Reportes de transito (seed: 55)
+
+> **SEMILLA: 55**
 
 ## Confusio alguna vez dijo: Todos tenemos dos vidas y la segunda empieza cuando te das cuenta de que solo tienes una
 
