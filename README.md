@@ -32,6 +32,37 @@ Observaciones Repositorio:
 
 ## Observaciones del profesor
 
+### Práctica 1 — evaluación (8-oct-2026, 00:51 h)
+
+**Calificación: 68 / 100**
+
+Entregada el **6-oct-2026 a las 14:19**, dentro del plazo (la entrega cerraba el mar 6-oct), así que no lleva penalización por retraso.
+
+**Criterios cubiertos al 100%:** Estructura del monorepo (6/6); Nombres exactos de los entregables; Requisitos de Git (3+ commits, rama mergeada); Python puro (sin `csv` ni `pandas`, lectura con `open`); Formato del `resumen.txt` (encabezado y secciones); Dimensiones: filas, columnas, nombres; Calidad de datos (celdas vacías).
+
+**Observaciones:**
+
+1. La semilla reportada es incorrecta: pusieron `Seed: ?` y su semilla es **55**.
+2. Las primeras 5 filas deben ir separadas con ` | ` (barra con espacios a los lados), no con `|` pegado.
+3. La columna categórica de su tema es **`zona`** (viene en la tabla de referencia del enunciado), no `telefono`. Por el número de valores únicos que reportan, parece que la están detectando automáticamente (la columna con más valores distintos) en vez de tomarla de la tabla.
+4. La columna numérica que pide P1 es la `numerica_1` de su tema, **`duracion_incidente_min`**, no `descripcion_incidente`.
+
+**Desglose:**
+
+| Criterio | Obtenido | Máximo |
+|---|:---:|:---:|
+| Estructura del monorepo (6/6) | 8 | 8 |
+| Nombres exactos de los entregables | 10 | 10 |
+| Requisitos de Git (3+ commits, rama mergeada) | 10 | 10 |
+| Python puro (sin `csv` ni `pandas`, lectura con `open`) | 8 | 8 |
+| Formato del `resumen.txt` (encabezado y secciones) | 9 | 9 |
+| Encabezado: Archivo, Pareja, Seed | 5 | 10 |
+| Dimensiones: filas, columnas, nombres | 10 | 10 |
+| Primeras 5 filas (separadas con barra y espacios) | 3 | 5 |
+| Columna categórica (nombre, únicos, más frecuente) | 0 | 12 |
+| Columna numérica_1 (nombre, válidos, mín, máx) | 0 | 13 |
+| Calidad de datos (celdas vacías) | 5 | 5 |
+| **Total** | **68** | **100** |
 ### 22-sep-2026
 
 **Estatus:** 4/6 de la estructura esperada.
