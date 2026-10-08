@@ -6,14 +6,12 @@ data = []
 primeras_5_filas = []
 tema = 'reportes_transito'
 
-pos_cat = 4
+# Se inicializan variables (los índices se buscarán dinámicamente)
 conteo_valores = []
 frecuencias_valores = {}
-
-pos_num = 2 
 conteo_validos = 0
-min_val = 10000000
-max_val = -10000000
+min_val = float('inf')
+max_val = float('-inf')
 
 celdas_vacias_totales = 0
 celdas_vacias_por_columna = {}
@@ -21,37 +19,44 @@ celdas_vacias_por_columna = {}
 with open(ruta_csv, "r", encoding="utf-8") as archivo:
     linea_cabecera = archivo.readline().strip()
     columnas = linea_cabecera.split("|")
+    
+    # Detección dinámica de las columnas requeridas en la rúbrica
+    pos_cat = columnas.index("zona") if "zona" in columnas else 0
+    pos_num = columnas.index("duracion_incidente_min") if "duracion_incidente_min" in columnas else 0
+    
     columna_numerica = columnas[pos_num]
+    columna_categorica = columnas[pos_cat]
     
     for col in columnas:
         celdas_vacias_por_columna[col] = 0
 
     for linea in archivo:
         linea_limpia = linea.strip()
-
+        linea_lista = linea_limpia.split("|")
+        
+        # Corrección de formato: Separar con barra y espacios
         if n_filas < 5:
-            primeras_5_filas.append(linea_limpia)
+            primeras_5_filas.append(" | ".join(linea_lista))
             
-        linea_limpia = linea_limpia.split("|")
-        data.append(linea_limpia)
+        data.append(linea_lista)
         n_filas += 1
 
-        for i in range(len(linea_limpia)):
-            if linea_limpia[i] == '':
+        for i in range(len(linea_lista)):
+            if linea_lista[i] == '':
                 celdas_vacias_totales += 1
                 if i < len(columnas):
                     celdas_vacias_por_columna[columnas[i]] += 1
 
-        if pos_cat < len(linea_limpia):
-            cat = linea_limpia[pos_cat].lower().title()
+        if pos_cat < len(linea_lista):
+            cat = linea_lista[pos_cat].lower().title()
             if cat != '':
                 if cat in frecuencias_valores:
                     frecuencias_valores[cat] += 1
                 else:
                     frecuencias_valores[cat] = 1
                     
-        if pos_num < len(linea_limpia):
-            num = linea_limpia[pos_num]
+        if pos_num < len(linea_lista):
+            num = linea_lista[pos_num]
             if num != '':
                 try:
                     num = float(num)
@@ -63,7 +68,6 @@ with open(ruta_csv, "r", encoding="utf-8") as archivo:
                 except ValueError:
                     pass
 
-columna_categorica = columnas[pos_cat]
 frecuencias_lista = [*frecuencias_valores.items()]
 valores_unicos = len(frecuencias_lista)
 valor_mas_frec = frecuencias_lista[0] if frecuencias_lista else ("N/A", 0)
@@ -75,7 +79,8 @@ for tup in frecuencias_lista:
 reporte = f"=== RESUMEN DEL DATASET ===\n"
 reporte += f"Archivo: {tema}-ruido_100000.csv\n"
 reporte += f"Pareja: Hugo Hernandez Carrillo - Fernando Legaria Mendoza\n"
-reporte += f"Seed: ?\n\n"
+# Corrección de la Semilla
+reporte += f"Seed: 55\n\n"
 
 reporte += f"--- Dimensiones ---\n"
 reporte += f"Filas: {n_filas}\n"
@@ -83,7 +88,8 @@ reporte += f"Columnas: {len(columnas)}\n"
 reporte += f"Nombres de columnas: {', '.join(columnas)}\n\n"
 
 reporte += f"--- Primeras 5 filas ---\n"
-reporte += f"{linea_cabecera}\n"
+# Corrección de formato de cabecera para que coincida visualmente
+reporte += f"{' | '.join(columnas)}\n"
 for fila in primeras_5_filas:
     reporte += f"{fila}\n"
 
