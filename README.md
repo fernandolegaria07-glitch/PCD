@@ -32,6 +32,32 @@ Observaciones Repositorio:
 
 ## Observaciones del profesor
 
+### 13-oct-2026 — Correcciones de la Práctica 1
+
+**Calificación de P1: 68 → 90 / 100.**
+
+**Corrigieron sus cuatro observaciones** (commit del 8-oct), el mismo día que recibieron la
+retroalimentación:
+
+1. La semilla ya dice **55**.
+2. Las primeras 5 filas ya van separadas con la barra con espacios a los lados.
+3. La columna categórica ya es **`zona`**, y lo importante: ahora la toman por nombre en el
+   código (`columnas.index("zona")`) en vez de detectarla automáticamente. Ese era el fondo
+   de la observación, no solo el nombre en la salida.
+4. La columna numérica ya es **`duracion_incidente_min`**: 98877 válidos, mínimo -600.0 y
+   máximo 6360.0, exacto como la referencia.
+
+De paso quitaron los acentos de los títulos de sección, con lo que el formato quedó igual al
+de la solución de referencia.
+
+Su conteo de la columna categórica sigue distinto (14 valores únicos y `Periferico` con
+14127, contra 21 y 13831 de la referencia), pero **no se les descuenta**: viene de que en
+`resumen.py:51` hacen `.lower().title()` sin `.strip()`, y ese tipo de normalización se dio
+por válida para todo el grupo porque el enunciado de P1 no decía cómo normalizar. Ténganlo
+presente para P4 y P5.
+
+**Cómo se aplicó el reconocimiento.** Nueve de los diez equipos que tenían observaciones las atendieron entre el 8 y el 12 de octubre. A quien corrigió y tenía 90 o más, su práctica queda en **99**; a quien tenía menos de 90, en **90**. El 100 se reserva para quien entregó bien desde la primera vez. En la tabla de calificaciones del curso su celda aparece como `anterior/vigente`: el primer número es la entrega original y **el segundo es el que cuenta**.
+
 ### Práctica 1 — evaluación (8-oct-2026, 00:51 h)
 
 **Calificación: 68 / 100**
