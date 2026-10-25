@@ -17,7 +17,7 @@ class Categorica:
         resul['columna'] = self.nombre
         val_unicos = set(self.data)
         resul['n_valores_unicos'] = len(val_unicos)
-        resul['valores'] = val_unicos
+        resul['valores'] = list(val_unicos)
         return resul
 
     def cat_mas_frec(self):
@@ -43,6 +43,30 @@ class Categorica:
             resul.append(sm_resul)
         return resul
 
+class Numerica:
+
+    def __init__(self, nombre, data, index):
+        self.nombre = nombre
+        self.index = index
+
+        self.data = list(filter(lambda x : x is not None, data))
+
+    def estadisticas(self):
+        return {
+            'columna': self.nombre,
+            'n_valores_validos': len(self.data),
+            'minimo': min(self.data),
+            'maximo': max(self.data),
+            'promedio': round(sum(self.data) / len(self.data), 2),
+            'mediana': sorted(self.data)[int((len(self.data) - 1) / 2)]
+        }
+
+def a_float(texto):
+    try:
+        return float(texto)
+    except (ValueError, TypeError):
+        return -1
+
 
 
 dir_archivo = '../../datos/reportes_transito-ruido_100.csv'
@@ -59,5 +83,30 @@ with open(dir_archivo, 'r') as archivo:
                 if row[x].strip() != '':
                     data_col_cat.append(row[x].strip().title())
             col_cat = Categorica(cols[x], data_col_cat, x)
-    print(col_cat.top_3_cat())
+        if cols[x] == 'vehiculos_afectados':
+            data_num_1 = Numerica(cols[x], filter(lambda x: x > 0, map(a_float,[row[x] for row in data])), x)
+        if cols[x] == 'duracion_incidente_min':
+            data_num_2 = Numerica(cols[x], filter(lambda x: x > 0, map(a_float,[row[x] for row in data])), x)
     
+    final_json = {
+        "archivo": "reportes-transito-ruido.csv",
+        "pareja": "Hugo Hernandez - Fernando Legaria",
+        "seed": 55,
+
+      "valores_unicos_categorica": col_cat.valores_unicos(),
+
+      "conteo_por_categoria": col_cat.conteo,
+
+      "categoria_mas_frecuente": col_cat.cat_mas_frec(),
+
+      "top_3_categorias": col_cat.top_3_cat(),
+
+      "estadisticas_numerica_1": data_num_1.estadisticas(),
+      "estadisticas_numerica_2": data_num_2.estadisticas(),
+
+    }
+
+
+    with open('../resultados/analisis_python.json', 'w', encoding='utf-8') as f:
+        json.dump(final_json, f, indent=2, ensure_ascii=False)
+    print('Resultado generado en la carpeta de resultados como analisis_python.json')
