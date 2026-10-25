@@ -52,13 +52,22 @@ class Numerica:
         self.data = list(filter(lambda x : x is not None, data))
 
     def estadisticas(self):
+        sort_data = sorted(self.data)
+        index = int((len(self.data)) / 2)
+        if(len(self.data) % 2 == 1):
+            mediana = sort_data[index]
+        else:
+            md1 = sort_data[index]
+            md2 = sort_data[index-1]
+            mediana = (md1 + md2) / 2
+
         return {
             'columna': self.nombre,
             'n_valores_validos': len(self.data),
             'minimo': min(self.data),
             'maximo': max(self.data),
             'promedio': round(sum(self.data) / len(self.data), 2),
-            'mediana': sorted(self.data)[int((len(self.data) - 1) / 2)]
+            'mediana': mediana
         }
 
 def a_float(texto):
