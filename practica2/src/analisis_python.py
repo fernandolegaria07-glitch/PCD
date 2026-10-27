@@ -3,10 +3,9 @@ import json
 class Categorica:
 
     # Se considera que los datos ya estan limpios una vez ya entran en el objeto
-    def __init__(self, nombre, data, index):
+    def __init__(self, nombre, data):
         self.nombre = nombre
         self.data = data
-        self.index = index
         self.conteo = {}
         for value in data:
             self.conteo[value] = self.conteo.get(value, 0) + 1 
@@ -34,9 +33,8 @@ class Categorica:
     
     def top_3_cat(self):
         resul = []
-        sort_conteo = {k: v for k, v in sorted(self.conteo.items(), key=lambda item: item[1])}
-        items_conteo = sort_conteo.items()
-        for tup in list(items_conteo)[len(items_conteo)-3:]:
+        items_ordenados = sorted(self.conteo.items(), key=lambda item: (-item[1], item[0]))
+        for tup in items_ordenados[:3]:
             sm_resul = {}
             sm_resul['valor'] = tup[0]
             sm_resul['conteo'] = tup[1]
@@ -45,9 +43,8 @@ class Categorica:
 
 class Numerica:
 
-    def __init__(self, nombre, data, index):
+    def __init__(self, nombre, data):
         self.nombre = nombre
-        self.index = index
 
         self.data = list(filter(lambda x : x is not None, data))
 
@@ -67,7 +64,7 @@ class Numerica:
             'minimo': min(self.data),
             'maximo': max(self.data),
             'promedio': round(sum(self.data) / len(self.data), 2),
-            'mediana': mediana
+            'mediana': round(mediana,2)
         }
 
 def a_float(texto):
@@ -76,7 +73,33 @@ def a_float(texto):
     except (ValueError, TypeError):
         return -1
 
+def promedio_por_categoria(data, col_num, col_cat):
+    dir_sumas = {}
+    dir_conteo = {}
+    dir_resul = {}
+    for fila in data:
+        try:
+            if fila[col_num].strip() == '' or fila[col_cat].strip() == '':
+                continue
+            num = float(fila[col_num])
+            if num < 0:
+                continue
+            cat_act = fila[col_cat].strip()
+            dir_conteo[cat_act] = dir_conteo.get(cat_act, 0) + 1
+            dir_sumas[cat_act] = dir_sumas.get(cat_act, 0) + float(num)
+        except:
+            continue
+    for x, v in dir_conteo.items():
+        dir_resul[x] = round(dir_sumas[x] / v,2)
+    return dir_resul
 
+def filtrado_percentil(col_num):
+    n = len(col_num)
+    sort_num = sorted(col_num)
+    perMax = sort_num[int(0.9 * n)]
+    final = list(filter(lambda x: x > perMax, sort_num))
+    # Retorna umbral / n registros que cumplen / porcentaje
+    return (perMax, len(final), round((len(final) / len(col_num)) * 100,2))
 
 dir_archivo = '../../datos/reportes_transito-ruido_100.csv'
 
@@ -84,21 +107,23 @@ with open(dir_archivo, 'r') as archivo:
     cols = archivo.readline().strip().split('|')
     data = []
     for i in archivo:
-        data.append(i.strip().split('|'))
-    for x in range(len(cols)):
-        if cols[x] == 'zona':
+        valores = i.strip().split('|')
+        data.append(dict(zip(cols, valores)))
+    for col in cols:
+        if col == 'zona':
             data_col_cat = []
             for row in data:
-                if row[x].strip() != '':
-                    data_col_cat.append(row[x].strip().title())
-            col_cat = Categorica(cols[x], data_col_cat, x)
-        if cols[x] == 'vehiculos_afectados':
-            data_num_1 = Numerica(cols[x], filter(lambda x: x > 0, map(a_float,[row[x] for row in data])), x)
-        if cols[x] == 'duracion_incidente_min':
-            data_num_2 = Numerica(cols[x], filter(lambda x: x > 0, map(a_float,[row[x] for row in data])), x)
+                if row[col].strip() != '':
+                    data_col_cat.append(row[col].strip())
+            col_cat = Categorica(col, data_col_cat)
+        if col == 'duracion_incidente_min':
+            data_num_1 = Numerica(col, map(a_float, filter(lambda x : a_float(x) >= 0, [row[col] for row in data])))
+        if col == 'vehiculos_afectados':
+            data_num_2 = Numerica(col, map(a_float, filter(lambda x : a_float(x) >= 0, [row[col] for row in data])))
     
+    filt_umb, filt_n, filt_per = filtrado_percentil(data_num_1.data)
     final_json = {
-        "archivo": "reportes-transito-ruido.csv",
+        "archivo": "reportes_transito-ruido.csv",
         "pareja": "Hugo Hernandez - Fernando Legaria",
         "seed": 55,
 
@@ -112,10 +137,18 @@ with open(dir_archivo, 'r') as archivo:
 
       "estadisticas_numerica_1": data_num_1.estadisticas(),
       "estadisticas_numerica_2": data_num_2.estadisticas(),
-
+      "promedio_por_categoria": promedio_por_categoria(data, data_num_1.nombre, col_cat.nombre),
+      
+      "filtrado": {
+            "condicion": f"{data_num_1.nombre} > {filt_umb}",
+            "umbral_usado": filt_umb,
+            "n_registros_que_cumplen": filt_n,
+            "porcentaje": filt_per
+        }
     }
 
 
     with open('../resultados/analisis_python.json', 'w', encoding='utf-8') as f:
         json.dump(final_json, f, indent=2, ensure_ascii=False)
     print('Resultado generado en la carpeta de resultados como analisis_python.json')
+

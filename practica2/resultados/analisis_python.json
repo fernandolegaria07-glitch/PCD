@@ -1,0 +1,118 @@
+{
+  "archivo": "reportes_transito-ruido.csv",
+  "pareja": "Hugo Hernandez - Fernando Legaria",
+  "seed": 55,
+  "valores_unicos_categorica": {
+    "columna": "zona",
+    "n_valores_unicos": 21,
+    "valores": [
+      "zona norte",
+      "Zona Sur",
+      "Zona Norte",
+      "Centro",
+      "zona industrial",
+      "ZONA RESIDENCIAL",
+      "ZONA NORTE",
+      "Zona Residencial",
+      "ZONA SUR",
+      "AUTOPISTA",
+      "autopista",
+      "PERIFERICO",
+      "zona residencial",
+      "zona sur",
+      "periferico",
+      "Autopista",
+      "centro",
+      "ZONA INDUSTRIAL",
+      "Zona Industrial",
+      "Periferico",
+      "CENTRO"
+    ]
+  },
+  "conteo_por_categoria": {
+    "Zona Residencial": 13486,
+    "Periferico": 13831,
+    "PERIFERICO": 309,
+    "Zona Norte": 13226,
+    "AUTOPISTA": 276,
+    "Zona Sur": 13627,
+    "Autopista": 13605,
+    "Centro": 13581,
+    "Zona Industrial": 13631,
+    "zona residencial": 262,
+    "autopista": 254,
+    "ZONA RESIDENCIAL": 288,
+    "centro": 291,
+    "ZONA INDUSTRIAL": 262,
+    "CENTRO": 291,
+    "ZONA NORTE": 256,
+    "zona norte": 289,
+    "periferico": 273,
+    "zona industrial": 279,
+    "zona sur": 288,
+    "ZONA SUR": 269
+  },
+  "categoria_mas_frecuente": {
+    "valor": "Periferico",
+    "conteo": 13831
+  },
+  "top_3_categorias": [
+    {
+      "valor": "Periferico",
+      "conteo": 13831
+    },
+    {
+      "valor": "Zona Industrial",
+      "conteo": 13631
+    },
+    {
+      "valor": "Zona Sur",
+      "conteo": 13627
+    }
+  ],
+  "estadisticas_numerica_1": {
+    "columna": "duracion_incidente_min",
+    "n_valores_validos": 97616,
+    "minimo": 3.0,
+    "maximo": 6360.0,
+    "promedio": 65.22,
+    "mediana": 37.0
+  },
+  "estadisticas_numerica_2": {
+    "columna": "vehiculos_afectados",
+    "n_valores_validos": 97544,
+    "minimo": 1.0,
+    "maximo": 720.0,
+    "promedio": 3.91,
+    "mediana": 2.0
+  },
+  "promedio_por_categoria": {
+    "Zona Residencial": 66.66,
+    "Periferico": 63.56,
+    "PERIFERICO": 55.36,
+    "Zona Norte": 65.34,
+    "AUTOPISTA": 56.34,
+    "Zona Sur": 65.34,
+    "Autopista": 65.08,
+    "Centro": 66.68,
+    "Zona Industrial": 64.14,
+    "zona residencial": 49.9,
+    "autopista": 63.68,
+    "ZONA RESIDENCIAL": 62.16,
+    "centro": 80.13,
+    "ZONA NORTE": 62.33,
+    "zona norte": 62.2,
+    "periferico": 66.35,
+    "zona industrial": 52.98,
+    "zona sur": 55.89,
+    "CENTRO": 58.62,
+    "ZONA SUR": 51.4,
+    "ZONA INDUSTRIAL": 54.37
+  },
+  "filtrado": {
+    "condicion": "duracion_incidente_min > 57.0",
+    "umbral_usado": 57.0,
+    "n_registros_que_cumplen": 9313,
+    "porcentaje": 9.54
+  }
+}
