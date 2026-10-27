@@ -102,11 +102,7 @@ def filtrado_percentil(col_num):
     # Retorna umbral / n registros que cumplen / porcentaje
     return (perMax, len(final), round((len(final) / len(col_num)) * 100,2))
 
-<<<<<<< HEAD
-dir_archivo = '../../datos/reportes_transito-ruido_100.csv'
-=======
 dir_archivo = '../../datos/reportes_transito-ruido_100000.csv'
->>>>>>> main
 
 with open(dir_archivo, 'r') as archivo:
     cols = archivo.readline().strip().split('|')
@@ -156,7 +152,3 @@ with open(dir_archivo, 'r') as archivo:
     with open('../resultados/analisis_python.json', 'w', encoding='utf-8') as f:
         json.dump(final_json, f, indent=2, ensure_ascii=False)
     print('Resultado generado en la carpeta de resultados como analisis_python.json')
-<<<<<<< HEAD
-
-=======
->>>>>>> main
