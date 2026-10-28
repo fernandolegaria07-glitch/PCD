@@ -21,12 +21,18 @@ EQUIPO: the sea bros
 
 TEMA: Reportes de Transito
 
-Observaciones Repositorio:
-1- No tiene requirements.txt
-2- No tiene la carpeta datos/
-3- No tiene las carpetas practica1 a practica6 (tiene una carpeta "codigos/" en su lugar)
-4- No tiene la carpeta proyecto/
-5- Tiene un archivo .DS_Store versionado; deberia estar en .gitignore
+## Resumen de Prácticas
+
+### Práctica 1 — Setup del proyecto y primer reconocimiento del dataset
+- **Objetivo:** Configurar la estructura del monorepo y realizar una exploración inicial del dataset `reportes_transito-ruido_100000.csv` utilizando únicamente Python puro (`open()` y `.split("|")`).
+- **Implementación (`practica1/src/resumen.py`):** Conteo de dimensiones (filas y columnas), visualización de las primeras 5 filas, identificación de valores únicos y moda en la columna categórica (`zona`), cálculo de valores válidos, mínimo y máximo en la columna numérica principal (`duracion_incidente_min`), y conteo de celdas vacías por columna.
+- **Resultado (`practica1/resultados/resumen.txt`):** Reporte en texto plano con las métricas generales y de calidad de datos del archivo completo.
+
+### Práctica 2 — Procesamiento de datos con Python puro
+- **Objetivo:** Analizar el dataset completo organizando los registros en una lista de diccionarios y empleando clases (`Categorica` y `Numerica`), funciones reutilizables y herramientas de programación funcional (`lambda`, `map`, `filter`, `sorted`), sin librerías externas.
+- **Implementación (`practica2/src/analisis_python.py`):** Obtención de valores únicos, conteo por categoría, categoría más frecuente y top 3 categorías para `zona`; cálculo de estadísticas descriptivas (`min`, `max`, `promedio` y `mediana`) para `duracion_incidente_min` y `vehiculos_afectados`; cruce de columnas en `promedio_por_categoria` y filtrado por encima del percentil 90.
+- **Observación sobre ruido en categorías (`promedio_por_categoria`):** Al aplicar únicamente `.strip()` sin normalizar mayúsculas y minúsculas, variantes de escritura de una misma zona (como `Periferico`, `PERIFERICO` y `periferico`, o `Centro`, `CENTRO` y `centro`) aparecen como categorías separadas, cada una con su propio conteo y promedio de duración de incidente. Este ruido en los datos se limpiará en las prácticas posteriores (P4 y P5) con pandas.
+- **Resultado (`practica2/resultados/analisis_python.json`):** Archivo JSON estructurado con todos los indicadores calculados sobre el dataset completo.
 
 ---
 
@@ -142,3 +148,14 @@ Sigue igual: `practica1` a `practica6` y `proyecto/` siguen vacías, les falta l
 **Estatus:** 4/6 de la estructura esperada.
 
 Buen avance: agregaron `requirements.txt`, reemplazaron `codigos/` por `datos/`, y crearon las 6 carpetas `practica1` a `practica6` más `proyecto/`. Les falta llenar cada una con sus subcarpetas `src/` y `resultados/` (y `proyecto/` también necesita `datos/`) — por ahora están vacías. También resolvieron el `.DS_Store` que tenían versionado, bien hecho. Ya les dejamos su dataset (`reportes_transito-ruido_100.csv` y `_100000.csv`) dentro de `datos/`.
+
+### 19-sep-2026
+
+Observaciones Repositorio:
+1- No tiene requirements.txt
+2- No tiene la carpeta datos/
+3- No tiene las carpetas practica1 a practica6 (tiene una carpeta "codigos/" en su lugar)
+4- No tiene la carpeta proyecto/
+5- Tiene un archivo .DS_Store versionado; deberia estar en .gitignore
+
+
