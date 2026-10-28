@@ -72,7 +72,7 @@ def a_float(texto):
     try:
         return float(texto)
     except (ValueError, TypeError):
-        return -1
+        return None
 
 def promedio_por_categoria(data, col_num, col_cat):
     dir_sumas = {}
@@ -83,8 +83,6 @@ def promedio_por_categoria(data, col_num, col_cat):
             if fila[col_num].strip() == '' or fila[col_cat].strip() == '':
                 continue
             num = float(fila[col_num])
-            if num < 0:
-                continue
             cat_act = fila[col_cat].strip()
             dir_conteo[cat_act] = dir_conteo.get(cat_act, 0) + 1
             dir_sumas[cat_act] = dir_sumas.get(cat_act, 0) + float(num)
@@ -118,9 +116,9 @@ with open(dir_archivo, 'r') as archivo:
                     data_col_cat.append(row[col].strip())
             col_cat = Categorica(col, data_col_cat)
         if col == 'duracion_incidente_min':
-            data_num_1 = Numerica(col, map(a_float, filter(lambda x : a_float(x) >= 0, [row[col] for row in data])))
+            data_num_1 = Numerica(col, map(a_float, filter(lambda x : a_float(x) is not None, [row[col] for row in data])))
         if col == 'vehiculos_afectados':
-            data_num_2 = Numerica(col, map(a_float, filter(lambda x : a_float(x) >= 0, [row[col] for row in data])))
+            data_num_2 = Numerica(col, map(a_float, filter(lambda x : a_float(x) is not None, [row[col] for row in data])))
     
     filt_umb, filt_n, filt_per = filtrado_percentil(data_num_1.data)
     final_json = {
