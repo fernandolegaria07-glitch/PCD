@@ -38,6 +38,27 @@ TEMA: Reportes de Transito
 
 ## Observaciones del profesor
 
+### 2-nov-2026 — Correcciones de la Práctica 2
+
+**Calificación de P2: 85 → 90 / 100.**
+
+**Corrigieron sus dos observaciones** (commit del 28-oct, 07:57). Cambiaron `a_float()`
+para que devuelva **`None`** en vez de `-1` cuando no puede convertir, y el `filter` ahora
+descarta con `a_float(x) is not None` antes del `map`. Esa era la causa raíz: el `-1`
+entraba al análisis como si fuera un dato real.
+
+Con eso reportan `minimo` = **−600.0** en `duracion_incidente_min`, **98,877** valores
+válidos y promedio **63.73**; `vehiculos_afectados` ya trae **−60.0** de mínimo. El
+`promedio_por_categoria` quedó dentro de tolerancia en las 21 categorías y el filtrado
+cuadra (umbral **56.0**, **9,832** registros). Los doce criterios coinciden con la
+solución de referencia.
+
+Detalle menor, sin efecto en la calificación: el `filter` llama a `a_float()` y luego el
+`map` lo vuelve a llamar, así que cada valor se convierte dos veces. Funciona, pero
+guardar la conversión una sola vez es más limpio y la mitad del trabajo.
+
+**Cómo se aplicó el reconocimiento.** Los seis equipos que tenían observaciones en la P2 las atendieron entre el 27 y el 28 de octubre. A quien corrigió y tenía 90 o más, su práctica queda en **99**; a quien tenía menos de 90, en **90**. El 100 se reserva para quien entregó bien desde la primera vez. En la tabla de calificaciones del curso su celda aparece como `anterior/vigente`: el primer número es la entrega original y **el segundo es el que cuenta**.
+
 ### Práctica 2 — evaluación (27-oct-2026)
 
 **Calificación: 85 / 100**
