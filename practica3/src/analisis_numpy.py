@@ -1,56 +1,61 @@
 import numpy as np
 
-nombre_archivo = 'reportes_transito-ruido_100000.csv'
-dir_archivo = f'../../datos/{nombre_archivo}'
-seed = 55
-
 def a_float(texto):
     try:
         return float(texto.strip())
     except (ValueError, AttributeError):
         return np.nan
 
+def extraer_datos(dir_archivo):
+    with open(dir_archivo, 'r') as f:
+        lineas = f.read().strip().split('\n')
+    cabecera = lineas[0].split('|')
+    data = [linea.split('|') for linea in lineas[1:]]
+    return cabecera, data
 
-with open(dir_archivo, 'r' ) as f:
-    lineas = f.read().strip().split('\n')
-cabecera = lineas[0].split('|')
-data = [linea.split('|') for linea in lineas[1:]]
+
+class Numerica:
+    def __init__(self, nombre, index, raw):
+        self.std = None
+        self.media = None
+        if index == -1:
+            raise Exception('Nombre invalido')
+        self.nombre = nombre
+        self.data = np.array([a_float(value[index]) for value in raw])
+        self.mask = np.isnan(self.data)
+        self.validos = self.data[~self.mask]
+
+    def calcular_estadisticas(self):
+        self.media = np.mean(self.validos)
+        self.std = np.std(self.validos)
+        return {
+            'columna': self.nombre,
+            'n_valores_validos': len(self.validos),
+            'media': round(np.mean(self.validos), 2),
+            'desviacion_estandar': round(np.std(self.validos), 2),
+            'minimo': np.min(self.validos),
+            'maximo': np.max(self.validos),
+            'mediana': np.percentile(self.validos, 50),
+            'percentil_25': np.percentile(self.validos, 25),
+            'percentil_75': np.percentile(self.validos, 75),
+        }
 
 
-index_num_1, index_num_2 = cabecera.index('vehiculos_afectados'), cabecera.index('duracion_incidente_min')
-data_afectados = np.array([a_float(value[index_num_1]) for value in data])
-data_duracion = np.array([a_float(value[index_num_2]) for value in data])
 
-limpio_afectados = data_afectados[~np.isnan(data_afectados)]
-limpio_duracion = data_duracion[~np.isnan(data_duracion)]
+nombre_archivo = 'reportes_transito-ruido_100000.csv'
+dir_archivo = f'../../datos/{nombre_archivo}'
+seed = 55
 
+cabecera, data = extraer_datos(dir_archivo)
+nombre_num_1, nombre_num_2 = 'vehiculos_afectados', 'duracion_incidente_min'
+num_1 = Numerica(index=cabecera.index(nombre_num_1), nombre=nombre_num_1, raw=data)
+num_2 = Numerica(index=cabecera.index(nombre_num_2), nombre=nombre_num_2, raw=data)
 
 resul = {
     'archivo': nombre_archivo,
     'pareja': 'Hugo Hernández - Fernando Legaria',
     'seed': seed,
 
-    'numerica_1' : {
-        'columna': f'{cabecera[index_num_1]}',
-        'n_valores_validos': sum(limpio_afectados),
-        'media': round(limpio_afectados.mean(), 2),
-        'desviacion_estandar': round(limpio_afectados.std(), 2),
-        'minimo': limpio_afectados.min(),
-        'maximo': limpio_afectados.max(),
-        'mediana': np.percentile(limpio_afectados, 50),
-        'percentil_25': np.percentile(limpio_afectados, 25),
-        'percentil_75': np.percentile(limpio_afectados, 75),
-    },
-
-    'numerica_2' : {
-        'columna': f'{cabecera[index_num_2]}',
-        'n_valores_validos': sum(limpio_duracion),
-        'media': round(limpio_duracion.mean(), 2),
-        'desviacion_estandar': round(limpio_duracion.std(), 2),
-        'minimo': limpio_duracion.min(),
-        'maximo': limpio_duracion.max(),
-        'mediana': np.percentile(limpio_duracion, 50),
-        'percentil_25': np.percentile(limpio_duracion, 25),
-        'percentil_75': np.percentile(limpio_duracion, 75),
-    }
+    'numerica_1' : num_1.calcular_estadisticas(),
+    'numerica_2' : num_2.calcular_estadisticas(),
 }
