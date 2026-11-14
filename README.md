@@ -34,6 +34,11 @@ TEMA: Reportes de Transito
 - **Observación sobre ruido en categorías (`promedio_por_categoria`):** Al aplicar únicamente `.strip()` sin normalizar mayúsculas y minúsculas, variantes de escritura de una misma zona (como `Periferico`, `PERIFERICO` y `periferico`, o `Centro`, `CENTRO` y `centro`) aparecen como categorías separadas, cada una con su propio conteo y promedio de duración de incidente. Este ruido en los datos se limpiará en las prácticas posteriores (P4 y P5) con pandas.
 - **Resultado (`practica2/resultados/analisis_python.json`):** Archivo JSON estructurado con todos los indicadores calculados sobre el dataset completo.
 
+### Práctica 3 — Estadística descriptiva con NumPy
+- **Objetivo:** Analizar de forma vectorizada las dos columnas numéricas del dataset completo (`duracion_incidente_min` y `vehiculos_afectados`) usando NumPy, detectar valores atípicos y medir la diferencia de rendimiento frente a un bucle de Python puro.
+- **Implementación (`practica3/src/analisis_numpy.py`):** Localización de columnas por nombre y filtrado de valores inválidos mediante máscaras booleanas (`~np.isnan`) conservando negativos; clase `Numerica` para calcular los 8 estadísticos descriptivos (`n_valores_validos`, `media`, `desviacion_estandar` poblacional, `minimo`, `maximo`, `mediana`, `percentil_25` y `percentil_75`) y detectar outliers con el criterio de ±3 desviaciones estándar; y benchmarking con `time.perf_counter()` comprobando equivalencia numérica mediante `math.isclose`.
+- **Resultado (`practica3/resultados/analisis_numpy.json`):** Archivo JSON con el resumen estadístico de ambas columnas, el detalle de outliers (`644` en `duracion_incidente_min` y `948` en `vehiculos_afectados`) y los resultados del benchmark entre Python puro y NumPy.
+
 ---
 
 ## Observaciones del profesor
