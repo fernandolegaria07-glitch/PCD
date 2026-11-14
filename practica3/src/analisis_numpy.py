@@ -40,6 +40,21 @@ class Numerica:
             'percentil_75': np.percentile(self.validos, 75),
         }
 
+    def identificar_outliers(self, k=3):
+        media = self.media
+        std = self.std
+        inferior = media - k * std
+        superior = media + k * std
+        outliers = self.validos[(self.validos < inferior) & (self.validos > superior)]
+        return {
+            'metodo': 'desviacion_estandar_3',
+            'limite_inferior': inferior,
+            'limite_superior': superior,
+            'n_outliers': len(outliers),
+            'porcentaje': len(outliers) / len(self.validos),
+            'outliers-minimo': np.min(outliers),
+            'outliers-maximo': np.max(outliers),
+        }
 
 
 nombre_archivo = 'reportes_transito-ruido_100000.csv'
@@ -58,4 +73,7 @@ resul = {
 
     'numerica_1' : num_1.calcular_estadisticas(),
     'numerica_2' : num_2.calcular_estadisticas(),
+
+    'outliers_numerica_1': num_1.identificar_outliers(),
+    'outliers_numerica_2': num_2.identificar_outliers()
 }
