@@ -1,3 +1,5 @@
+import time
+import math
 import numpy as np
 
 def a_float(texto):
@@ -12,6 +14,55 @@ def extraer_datos(dir_archivo):
     cabecera = lineas[0].split('|')
     data = [linea.split('|') for linea in lineas[1:]]
     return cabecera, data
+
+
+'''
+    Devuelve en una diccionario con los nombres de cada valor, siendo el primer valor
+    de la tupla el tiempo y el segundo el valor, sirviendo este ultimo para la comprobacion
+'''
+def tiempos_puro(data):
+    inicio_media = time.perf_counter()
+    total = 0.0
+    for v in data:
+        total += v
+    media = total / len(data)
+    tiempo_media = time.perf_counter() - inicio_media
+
+    inicio_std = time.perf_counter()
+    suma_std = 0.0
+    for v in data:
+        suma_std += (v - media) ** 2
+    std = math.sqrt(suma_std / len(data))
+    tiempo_std = time.perf_counter() - inicio_std
+    return {
+        'media': (tiempo_media, media),
+        'std': (tiempo_std, std),
+    }
+
+def tiempos_numpy(data):
+    inicio_media = time.perf_counter()
+    media = np.mean(data)
+    tiempo_media = time.perf_counter() - inicio_media
+    inicio_std = time.perf_counter()
+    std = np.std(data)
+    tiempo_std = time.perf_counter() - inicio_std
+    return {
+        'media': (tiempo_media, media),
+        'std': (tiempo_std, std),
+    }
+
+def benchmarking(data):
+    t_py = tiempos_puro(data)
+    t_np = tiempos_numpy(data)
+    tiempo_py = t_py['std'][0] + t_py['media'][0]
+    tiempo_np = t_np['std'][0] + t_np['media'][0]
+    return {
+        'n_filas': len(data),
+        'tiempo_bucle_python_seg': tiempo_py,
+        'tiempo_bucle_numpy_seg': tiempo_np,
+        'factor_velocidad': tiempo_py / tiempo_np,
+        'operacion medida': 'Calcular media y desviacion estandar'
+    }
 
 
 class Numerica:
@@ -58,4 +109,6 @@ resul = {
 
     'numerica_1' : num_1.calcular_estadisticas(),
     'numerica_2' : num_2.calcular_estadisticas(),
+
+    'benchmark': benchmarking(data)
 }
