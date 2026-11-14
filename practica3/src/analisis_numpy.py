@@ -1,12 +1,19 @@
 import time
 import math
 import numpy as np
+import json
 
 def a_float(texto):
     try:
         return float(texto.strip())
     except (ValueError, AttributeError):
         return np.nan
+def redondear_sig(numero, cifras):
+    if numero == 0:
+        return 0
+    desplazamiento = cifras - int(math.floor(math.log10(abs(numero)))) - 1
+    return round(numero, desplazamiento)
+
 
 def extraer_datos(dir_archivo):
     with open(dir_archivo, 'r') as f:
@@ -56,12 +63,16 @@ def benchmarking(data):
     t_np = tiempos_numpy(data)
     tiempo_py = t_py['std'][0] + t_py['media'][0]
     tiempo_np = t_np['std'][0] + t_np['media'][0]
+
+    if not math.isclose(t_py['std'][1], t_np['std'][1]) or not math.isclose(t_py['media'][1], t_np['media'][1]):
+        raise Exception('El valor estandar o la media no son correctos en el benchmarking')
+
     return {
         'n_filas': len(data),
-        'tiempo_bucle_python_seg': tiempo_py,
-        'tiempo_bucle_numpy_seg': tiempo_np,
-        'factor_velocidad': tiempo_py / tiempo_np,
-        'operacion medida': 'Calcular media y desviacion estandar'
+        'tiempo_bucle_python_seg': redondear_sig(tiempo_py, 2),
+        'tiempo_numpy_seg': redondear_sig(tiempo_np,2),
+        'factor_velocidad': round(tiempo_py / tiempo_np, 2),
+        'operacion_medida': 'Calcular media y desviacion estandar'
     }
 
 
@@ -84,11 +95,11 @@ class Numerica:
             'n_valores_validos': len(self.validos),
             'media': round(np.mean(self.validos), 2),
             'desviacion_estandar': round(np.std(self.validos), 2),
-            'minimo': np.min(self.validos),
-            'maximo': np.max(self.validos),
-            'mediana': np.percentile(self.validos, 50),
-            'percentil_25': np.percentile(self.validos, 25),
-            'percentil_75': np.percentile(self.validos, 75),
+            'minimo': round(np.min(self.validos),2),
+            'maximo': round(np.max(self.validos),2),
+            'mediana': round(np.percentile(self.validos, 50),2),
+            'percentil_25': round(np.percentile(self.validos, 25),2),
+            'percentil_75': round(np.percentile(self.validos, 75),2),
         }
 
     def identificar_outliers(self, k=3):
@@ -96,15 +107,15 @@ class Numerica:
         std = self.std
         inferior = media - k * std
         superior = media + k * std
-        outliers = self.validos[(self.validos < inferior) & (self.validos > superior)]
+        outliers = self.validos[(self.validos < inferior) | (self.validos > superior)]
         return {
             'metodo': 'desviacion_estandar_3',
-            'limite_inferior': inferior,
-            'limite_superior': superior,
+            'limite_inferior': round(inferior, 2),
+            'limite_superior': round(superior, 2),
             'n_outliers': len(outliers),
-            'porcentaje': len(outliers) / len(self.validos),
-            'outliers-minimo': np.min(outliers),
-            'outliers-maximo': np.max(outliers),
+            'porcentaje': round( (len(outliers) / len(self.validos)) * 100, 2),
+            'outliers_minimo': round(np.min(outliers),2) if len(outliers) != 0 else None,
+            'outliers_maximo': round(np.max(outliers),2) if len(outliers) != 0 else None,
         }
 
 
@@ -113,7 +124,7 @@ dir_archivo = f'../../datos/{nombre_archivo}'
 seed = 55
 
 cabecera, data = extraer_datos(dir_archivo)
-nombre_num_1, nombre_num_2 = 'vehiculos_afectados', 'duracion_incidente_min'
+nombre_num_1, nombre_num_2 =  'duracion_incidente_min', 'vehiculos_afectados'
 num_1 = Numerica(index=cabecera.index(nombre_num_1), nombre=nombre_num_1, raw=data)
 num_2 = Numerica(index=cabecera.index(nombre_num_2), nombre=nombre_num_2, raw=data)
 
@@ -128,6 +139,10 @@ resul = {
     'outliers_numerica_1': num_1.identificar_outliers(),
     'outliers_numerica_2': num_2.identificar_outliers(),
 
-    'benchmark': benchmarking(data),
-
+    'benchmark': benchmarking(num_1.validos),
 }
+
+with open('../resultados/analisis_numpy.json', 'w', encoding='utf-8') as f:
+    json.dump(resul, f, indent=2, ensure_ascii=False)
+print('Resultado generado en la carpeta de resultados como analisis_numpy.json')
+

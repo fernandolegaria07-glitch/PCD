@@ -1,0 +1,52 @@
+{
+  "archivo": "reportes_transito-ruido_100000.csv",
+  "pareja": "Hugo Hernández - Fernando Legaria",
+  "seed": 55,
+  "numerica_1": {
+    "columna": "duracion_incidente_min",
+    "n_valores_validos": 98877,
+    "media": 63.73,
+    "desviacion_estandar": 158.5,
+    "minimo": -600.0,
+    "maximo": 6360.0,
+    "mediana": 37.0,
+    "percentil_25": 30.0,
+    "percentil_75": 46.0
+  },
+  "numerica_2": {
+    "columna": "vehiculos_afectados",
+    "n_valores_validos": 98876,
+    "media": 3.81,
+    "desviacion_estandar": 11.24,
+    "minimo": -60.0,
+    "maximo": 720.0,
+    "mediana": 2.0,
+    "percentil_25": 1.0,
+    "percentil_75": 3.0
+  },
+  "outliers_numerica_1": {
+    "metodo": "desviacion_estandar_3",
+    "limite_inferior": -411.76,
+    "limite_superior": 539.22,
+    "n_outliers": 644,
+    "porcentaje": 0.65,
+    "outliers_minimo": -600.0,
+    "outliers_maximo": 6360.0
+  },
+  "outliers_numerica_2": {
+    "metodo": "desviacion_estandar_3",
+    "limite_inferior": -29.91,
+    "limite_superior": 37.53,
+    "n_outliers": 948,
+    "porcentaje": 0.96,
+    "outliers_minimo": -60.0,
+    "outliers_maximo": 720.0
+  },
+  "benchmark": {
+    "n_filas": 98877,
+    "tiempo_bucle_python_seg": 0.028,
+    "tiempo_numpy_seg": 0.00032,
+    "factor_velocidad": 87.32,
+    "operacion_medida": "Calcular media y desviacion estandar"
+  }
+}
